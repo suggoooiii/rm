@@ -1,5 +1,5 @@
 import React, { useReducer } from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Text } from "react-native";
 import ColorCounter from "../components/ColorCounter";
 
 const COLOR_INCREMENT = 20;
@@ -33,6 +33,7 @@ const reducer = (state, action) => {
 const SquareScreen = () => {
 	const [state, dispatch] = useReducer(reducer, { red: 0, green: 0, blue: 0 });
 	const { red, green, blue } = state;
+	console.log(state);
 
 	return (
 		<View>
@@ -70,6 +71,7 @@ const SquareScreen = () => {
 					backgroundColor: `rgb(${red},${green},${blue})`,
 				}}
 			/>
+			{/* <Text>Current State is: {state}</Text> */}
 		</View>
 	);
 };
